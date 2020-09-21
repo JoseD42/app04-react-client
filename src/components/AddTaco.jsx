@@ -6,7 +6,7 @@ export default class AddTaco extends Component{
     state = {
         name: '',
         quantity: 0,
-        pica: ''
+        pica: 'si'
     }
 
     sendTaco = () =>{
@@ -21,8 +21,6 @@ export default class AddTaco extends Component{
     catchName = event => this.setState({name: event.target.value});
     catchQuantity = event => this.setState({quantity: event.target.value});
     catchSpacyness = event => this.setState({pica: event.target.value});
-    //catchSpacyness = event => console.log(event.target.value);
-
 
     render() {
         return (

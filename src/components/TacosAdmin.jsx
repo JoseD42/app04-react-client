@@ -7,12 +7,12 @@ import AddTaco from './AddTaco';
 //import axios from 'axios';
 
 export default class TacosAdmin extends Component{
-
+    
 
     render() {
         return (
             <Container>
-                <PageTitle text='JD Tacos' color='black' fontSize={5}/>
+                <PageTitle text='Taquería Don Erik' color='black' fontSize={8}/>
                 <TacoList/>
                 <AddTaco/>
             </Container>
