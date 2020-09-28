@@ -15,18 +15,22 @@ export default class TacoList extends Component{
         .then(taco => this.setState({currentTaco: taco}));
     }
 
-
     componentDidMount(){
+        this.watchCode();
+    }
+
+    watchCode = ()=> setTimeout(()=>{
         axios.get('http://localhost:5000')
         .then(reponse => reponse.data)
         .then(tacos => {
             this.setState({tacos: tacos.map(taco =>{
                 return <li className='list-group-item' key={taco.id} onClick={()=>this.tacoClick(taco.id)}>
-                            <div>Nombre del taco: {taco.name}</div>
+                            Nombre del taco: {taco.name}
                         </li>
             })})
         });
-    }
+        this.watchCode();
+    }, 1000);
 
     render() {
 
